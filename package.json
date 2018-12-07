@@ -1,8 +1,8 @@
 {
-  "name": "reveal.js",
+  "name": "webdev-site",
   "version": "3.7.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
+  "description": "Home page for webdev course 2019",
+  "homepage": "https://webdev.cecilecody.life",
   "subdomain": "revealjs",
   "main": "js/reveal.js",
   "scripts": {
