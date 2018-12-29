@@ -25,12 +25,12 @@ English + French
 
 # Objectif
 
-* Être capable de décrire l’histoire de
-* JavaScript et ECMAScript ainsi que les
-* principales différences entre Java et
-* .NET. Comprendre les principes de
-* programmation asynchrone et les
-* différences d’avec les threads.
+* Être capable de décrire:
+  * l’histoire de JavaScript + ECMAScript
+  * les principales différences entre Java + .NET
+* Comprendre les principes de:
+  * programmation asynchrone
+  * les différences d’avec les threads
 
 ---
 
@@ -89,3 +89,5 @@ JIT vs Scripts
 ---
 
 # Bonne pratique
+
+* composition and concatination
