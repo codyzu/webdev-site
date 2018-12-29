@@ -3,13 +3,17 @@
 ## Course 1
 
 
-# Cody Zuschlag
+```javascript
+const me = {
+    name: 'Cody Zuschlag',
 
-## Hubware
+    employer: 'Hubware',
 
-C, C++, C#, Java, JavaScript
+    experience: ['C', 'C++', 'C#', 'Java', 'JavaScript'],
 
-English + French
+    languages: ['english', 'french', 'franglais'],
+};
+```
 
 ---
 
