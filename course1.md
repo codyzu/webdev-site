@@ -1,6 +1,9 @@
-# Web Development
+# Web ☁️ Development
 
-## Course 1
+---
+
+# Introduction 👋
+---
 
 
 ```javascript
@@ -15,63 +18,48 @@ const me = {
 };
 ```
 
+
+# This course
+
+- 📦 6 modules
+- 📝 2 tests
+- 💻 homework (devoir)
+
+
+<!-- .slide: data-background-image="./images/code.png" data-background-size="100px" data-background-position="top 10px left 10px" data-background-opacity="0.75" -->
+# Activity
 ---
-
-# Programme
-
-* Introduction au JavaScript et historique
-* Les différences entre Java et .net
-* ECMAScript, ES5/6/7
-* Programmation asynchrone et event loop
-* Bonnes pratiques et pièges
-
----
-
-# Objectif
-
-* Être capable de décrire:
-  * l’histoire de JavaScript + ECMAScript
-  * les principales différences entre Java + .NET
-* Comprendre les principes de:
-  * programmation asynchrone
-  * les différences d’avec les threads
+## where are you from?
 
 ---
 
-# JavaScript
+# Module 1: JavaScript
+---
 
-* Brendan Eicht
-* 1995
-* Netscape Navigator
+---
+
+# History ⌛️
+* 1995: Brendan Eicht 👉 Netscape
+* "LiveScript" -> "JavaScript" (marketing)
+* 1997: ECMAScript standard 1
+  * es3, ~~es4~~, es5, es2016...
 
 notes:
 * created to make web an application platform
 
 
+<!-- .slide: data-background-image="./images/nodejs.png" data-background-size="300px" data-background-position="bottom" data-background-opacity="1" -->
 # node.js
 
-* Chrome
-* Ryan Dahl
-* 2009
-
-
-# ECMAScript
-
-* 200???
-* ESx ES20xx
+<!-- ._element: style="max-width: 150px; border: 0px; padding: 10px 10px;" -->
+* Google Chrome v8
+* 2009: Ryan Dahl 👉 node.js
 
 ---
 
-# JS vs Java/.net
----
-JIT vs Scripts
+# 👊 JS vs Java
 
-
-## Multitasking
-
-| |Java/.net|JS|
-|--|--|--|
-|Multitasking|multithreading|scaling|
+## or .NET
 
 ---
 
