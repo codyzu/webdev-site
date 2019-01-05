@@ -1,4 +1,5 @@
 # Web ☁️ Development
+---
 
 ---
 
@@ -8,12 +9,17 @@
 
 ```javascript
 const me = {
+
+    // Full name
     name: 'Cody Zuschlag',
 
+    // Where do I work?
     employer: 'Hubware',
 
+    // What experience do I have?
     experience: ['C', 'C++', 'C#', 'Java', 'JavaScript'],
 
+    // What languages do I speak?
     languages: ['english', 'french', 'franglais'],
 };
 ```
@@ -26,7 +32,8 @@ const me = {
 - 💻 homework (devoir)
 
 
-<!-- .slide: data-background-image="./images/code.png" data-background-size="100px" data-background-position="top 10px left 10px" data-background-opacity="0.75" -->
+<!-- ._slide: data-background-image="./images/code.png" data-background-size="100px" data-background-position="top 10px left 10px" data-background-opacity="0.75" -->
+<!-- .slide: data-background-image="./images/code.png" data-background-size="250px" data-background-position="bottom" data-background-opacity="0.75" -->
 # Activity
 ---
 ## where are you from?
@@ -39,6 +46,9 @@ const me = {
 ---
 
 # History ⌛️
+---
+
+
 * 1995: Brendan Eicht 👉 Netscape
 * "LiveScript" -> "JavaScript" (marketing)
 * 1997: ECMAScript standard 1
@@ -49,17 +59,98 @@ notes:
 
 
 <!-- .slide: data-background-image="./images/nodejs.png" data-background-size="300px" data-background-position="bottom" data-background-opacity="1" -->
-# node.js
-
 <!-- ._element: style="max-width: 150px; border: 0px; padding: 10px 10px;" -->
 * Google Chrome v8
 * 2009: Ryan Dahl 👉 node.js
 
+
+<!-- .slide: data-background-image="./images/dockerkubernetes-transparent.png" data-background-size="300px" data-background-position="bottom" data-background-opacity="1" -->
+# Containerization
+
+* 2013: Docker
+* 2014/2015: Kubernetes
+
+
+<!-- .slide: data-background-image="./images/faas-transparent.png" data-background-size="300px" data-background-position="bottom" data-background-opacity="1" -->
+# Serverless / FaaS
+
+* 2010: PiCloud (python)
+* 2014: Amazon AWS
+* 2016: MS Azure Functions (GA)
+* 2018: Google Cloud Functions (GA)
+
 ---
 
 # 👊 JS vs Java
-
+---
 ## or .NET
+
+
+## vs Java
+* no relation to Java
+* "JavaScript" 👉 marketing
+* _inspired_ by Java
+
+
+<!-- .slide: data-background-image="./images/marker.png" data-background-size="100px" data-background-position="bottom" data-background-opacity="0.70" -->
+vs Java
+<small>
+
+* Execution
+* Compilation
+* Types
+* Portability
+* Numeric types
+* OO
+* Inheritance
+* Concurrency
+* Function overloading
+* First class functions
+* XML + JSON
+* ~~Exception Handling (try, catch, finally)~~
+* Deployment / Scaling
+
+</small>
+
+---
+
+# How to 💡 JavaScript
+---
+This course 👈 **modern** JavaScript (ECMAScript)
+
+---
+
+# Types 🎟
+---
+
+
+* Number
+* String
+* Boolean
+* Object
+* Array
+
+
+* Number
+* String
+* Boolean
+* Object
+  * Function
+  * Array
+  * Date
+  * RegExp
+* null
+* undefined
+
+
+# Number
+* IEEE Standard for Floating-Point Arithmetic (IEEE 754)
+* "only 1" number type (+ BigInt)
+* parseInt, parseFloat
+* NaN
+* Safe Integer
+* FP math
+* math built-in
 
 ---
 
