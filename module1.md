@@ -79,6 +79,12 @@ notes:
 * 2016: MS Azure Functions (GA)
 * 2018: Google Cloud Functions (GA)
 
+
+# Under Attack!
+# 💣 🔫 ⚔️
+* Microsoft: JScript, silverlight, asp.net, typescript
+* Adobe: flast
+
 ---
 
 # 👊 JS vs Java
@@ -143,40 +149,107 @@ This course 👈 **modern** JavaScript (ECMAScript)
 * undefined
 
 
-# Number
+# Number 🔢
 * IEEE Standard for Floating-Point Arithmetic (IEEE 754)
 * "only 1" number type (+ BigInt)
 * parseInt, parseFloat
 * NaN
-* Safe Integer
+* safe integer range
 * FP math
 * math built-in
 
+
+# String 🔤
+* similarities to Java
+* String.prototype
+* `a + b` vs `${}`
+* searching
+* RegExp
+
+
+# Boolean ✔️ ❌
+* comparison operators
+* don't use `==` and `!=`
+* Boolish
+* `!`, `&&`, `||`
+* `NaN`, associative, De Morgans
+
+
+# Object 📦
+* everything excpet `null` and `undefined`
+* similar to hash table, map, record, struct, dictionary
+* object literals `{}`
+* keys
+* Object.assign()
+* Object.prototype
+* Object.freeze()
+
+
+# Array 📜
+* "spcial" Object: magic length
+* creation
+* `typeof` vs `Array.isArray()`
+* destructive operations
+* Array.prototype
+* functional
+* sorting
+* concatination and substrings
+
+
+# `null` & `undefined` ❓
+* `||` & `&&`
+* 2 bottom values
+* language uses undefined (let, uninitialized args)
+* typeof
+* use `undefined` unless required
+  * `Object.create(null)`
+  * `JSON.stringify({}, null, 2)`
+
 ---
 
-# String
+# Variables & Scope
+* var
+* let
+* const
+
+
+# `'use strict'`
+* es5
+* why?
+* examples
+* babel
 
 ---
 
-# Boolean
+# Control Structures
+* conditional `if` & ternary
+* loops
+* switch
+* tail recursion
 
 ---
 
-# Object
+# Functions
+* default arguments
+* declarations vs expressions
+* this
+* function objects
 
 ---
 
-# Array
+# Inheritance
 
 ---
 
-# `null` & `undefined` 
+# Semicolons
+* Automatic Semicolon Insertion (ASI)
+* danger! ☣️
 
 ---
 
-# Event Loop
----
-**Only 1 thread!**
+# Bonus: FP
+* 1st class function
+* dividing
 
 ---
 
@@ -187,21 +260,3 @@ This course 👈 **modern** JavaScript (ECMAScript)
 1. email me:
   * google email address
   * github username
-
----
-
-# Libua
-
----
-
-# Les problemes
-
-* semicolon
-* class
-* prototypal inheritance
-
----
-
-# Bonne pratique
-
-* composition and concatination
