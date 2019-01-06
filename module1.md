@@ -72,7 +72,7 @@ notes:
 
 
 <!-- .slide: data-background-image="./images/faas-transparent.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="1" -->
-# Serverless / FaaS
+# Serverless / `FaaS`
 
 * 2010: PiCloud (python)
 * 2014: Amazon AWS
@@ -178,6 +178,17 @@ This course 👈 **modern** JavaScript (ECMAScript)
 ---
 **Only 1 thread!**
 
+---
+
+# Homework / Devoir
+
+1. create google account
+1. create github account
+1. email me:
+  * google email address
+  * github username
+
+---
 
 # Libua
 
