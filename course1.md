@@ -33,7 +33,7 @@ const me = {
 
 
 <!-- ._slide: data-background-image="./images/code.png" data-background-size="100px" data-background-position="top 10px left 10px" data-background-opacity="0.75" -->
-<!-- .slide: data-background-image="./images/code.png" data-background-size="10%" data-background-position="bottom" data-background-opacity="0.75" -->
+<!-- .slide: data-background-image="./images/code.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="0.75" -->
 # Activity
 ---
 ## where are you from?
@@ -59,19 +59,19 @@ notes:
 
 
 <!-- ._element: style="max-width: 150px; border: 0px; padding: 10px 10px;" -->
-<!-- .slide: data-background-image="./images/nodejs.png" data-background-size="10%" data-background-position="bottom" data-background-opacity="1" -->
+<!-- .slide: data-background-image="./images/nodejs.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="1" -->
 * Google Chrome v8
 * 2009: Ryan Dahl 👉 node.js
 
 
-<!-- .slide: data-background-image="./images/dockerkubernetes-transparent.png" data-background-size="10%" data-background-position="bottom" data-background-opacity="1" -->
+<!-- .slide: data-background-image="./images/dockerkubernetes-transparent.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="1" -->
 # Containerization
 
 * 2013: Docker
 * 2014/2015: Kubernetes
 
 
-<!-- .slide: data-background-image="./images/faas-transparent.png" data-background-size="10%" data-background-position="bottom" data-background-opacity="1" -->
+<!-- .slide: data-background-image="./images/faas-transparent.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="1" -->
 # Serverless / FaaS
 
 * 2010: PiCloud (python)
@@ -92,7 +92,7 @@ notes:
 * _inspired_ by Java
 
 
-<!-- .slide: data-background-image="./images/marker.png" data-background-size="7%" data-background-position="bottom" data-background-opacity="0.70" -->
+<!-- .slide: data-background-image="./images/marker.png" data-background-size="auto 7%" data-background-position="bottom" data-background-opacity="0.70" -->
 vs Java
 <small>
 
@@ -151,6 +151,26 @@ This course 👈 **modern** JavaScript (ECMAScript)
 * Safe Integer
 * FP math
 * math built-in
+
+---
+
+# String
+
+---
+
+# Boolean
+
+---
+
+# Object
+
+---
+
+# Array
+
+---
+
+# `null` & `undefined` 
 
 ---
 
