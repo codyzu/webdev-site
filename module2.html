@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- favicon stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/atom-one-light.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown="module2.md" data-separator-vertical="^\r?\n\r?\n"></section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
