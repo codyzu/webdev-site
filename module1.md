@@ -9,16 +9,12 @@
 
 ```javascript
 const me = {
-
     // Full name
     name: 'Cody Zuschlag',
-
     // Where do I work?
     employer: 'Hubware',
-
     // What experience do I have?
     experience: ['C', 'C++', 'C#', 'Java', 'JavaScript'],
-
     // What languages do I speak?
     languages: ['english', 'french', 'franglais'],
 };
@@ -172,7 +168,7 @@ This course 👈 **modern** JavaScript (ECMAScript)
 * don't use `==` and `!=`
 * Boolish
 * `!`, `&&`, `||`
-* `NaN`, associative, De Morgans
+* `NaN`, inverse comparison, De Morgan's
 
 
 # Object 📦
@@ -207,7 +203,18 @@ This course 👈 **modern** JavaScript (ECMAScript)
 
 ---
 
-# Variables & Scope
+# Variables & Scope 👀
+---
+
+
+# scope
+* global
+* module
+* function
+* block
+
+
+# Variables
 * var
 * let
 * const
@@ -221,15 +228,29 @@ This course 👈 **modern** JavaScript (ECMAScript)
 
 ---
 
-# Control Structures
+# Control Structures 🔁
+---
+
+
 * conditional `if` & ternary
 * loops
+  * for, while, do
+  * break, continue 😑
+  * consider `while(true)` to allow breaking where needed
 * switch
-* tail recursion
+
+
+# recursion & tail calls
+* es6 (but not implemented 😿)
+* only if function returns result of calling a function
+* optimation: recusrsion as fast as loops
 
 ---
 
-# Functions
+# Functions 📞
+---
+
+
 * default arguments
 * declarations vs expressions
 * this
@@ -238,23 +259,83 @@ This course 👈 **modern** JavaScript (ECMAScript)
 ---
 
 # Inheritance
+# 👴 👨 👶
+---
+
+
+# Classes
+* What is a class?
+* C++ Classes
+* Java Classes
+
+
+# Prototypal Inheritance
+* objects inherit from other objects
+* no vtable
+* lighter and expressive compared to class inheritance
+
+
+* objects are containers of properties
+* prototypes are objects
+* methods are functions, stored in objects
+* missing props 👉 undfined, unless prototype exists
+
+
+* may object can share same prototype
+  * _similar_ to classes
+* prototypes typically store methods
+  * similar objects 👉 similar methods
+  * saves memory
+* `this`:
+  * lets prototype methods now which object
+  * dynamically bound ⚠️
+
+
+# JavaScript Inheritance
+
+
+## legacy construtors 👎
+* magic `new` operator
+
+
+## class 👍 👎
+* "syntatic sugar" over legacy construtors, not true classes
+* `this` or that?
+* usefule for migrating from other languages
+
+
+## factories 👍
+## 🏭
+* memory?
+* encapsulation with closures (private vars possible)
+* no `this` 👉 no errors
+
+
+<!-- .slide: data-background-image="./images/typescript.png" data-background-size="auto 10%" data-background-position="bottom" data-background-opacity="1" -->
+# Typescript
+* MS
+* requires annotations (allows interfaces)
+* large project with big teams
+* static type controversy
 
 ---
 
-# Semicolons
+# Semicolons `;`
+---
 * Automatic Semicolon Insertion (ASI)
 * danger! ☣️
 
 ---
 
 # Bonus: FP
+---
 * 1st class function
 * dividing
 
 ---
 
-# Homework / Devoir
-
+# Homework (Devoir)
+---
 1. create google account
 1. create github account
 1. email me:
