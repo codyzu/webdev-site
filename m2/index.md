@@ -1,20 +1,19 @@
-# Module 2: Express with Templates
+# Module 2: Express with templates
 
 *TODO:*
-- [] host a final site in firestore
-- [] migrate m3 sql course to markdown
+- [] host a final site in firebase
 
-## 1 Integrate the pug template system into your express server.
+## 1 Express hello world
 
-```bash
+```cmd
 mkdir my-express-app
 cd my-express-app
 
 yarn init
-// press enter for all prompts
 
 yarn add express jimp
 ```
+_Press enter in all of the yarn prompts_
 
 Create the file `app.js`:
 ```javascript
@@ -30,15 +29,17 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 Test your server with `node .\app.js` and navigate to http://localhost:3000.
 
 
+## 2 Server side templates with pug
+
 Follow the [steps to integrate a templating engine](https://expressjs.com/fr/guide/using-template-engines.html) into your express server.
 
-```bash
+```cmd
 yarn add pug
 ```
 
 Add to your `app.js`:
 ```javascript
-app.set('veiws', './views');
+app.set('views', './views');
 app.set('view engine', 'pug');
 
 // Replace your existing app.get('/', ...) with this new route:
@@ -60,9 +61,11 @@ Test your new index page by  navigating to http://localhost:3000. Open the chrom
 
 Open the chrome dev tools and look at the source file.
 
-### Question 2.1: What did the line `h1= message` in index.pug render to in HTML?
+![chrome developer tools](./images/inspect.jpg)
 
-## 2 Static Files
+#### Question 2.1: What did the line `h1= message` in index.pug render to in HTML?
+
+## 3 Static Files
 
 Follow the [steps to add static files](https://expressjs.com/fr/starter/static-files.html) into your web server.
 
@@ -71,11 +74,11 @@ Add the following configuration into your `app.js`:
 app.use(express.static('public'));
 ```
 
-Add some large image files into the directory `public/images`.
+Add some large image files (refer to your previous project) into the directory `public/images`.
 
 Test your static files by navigating to http://localhost:3000/images/abc.jpg
 
-### Exercise 2.1: Add a new pug view at `views/originals.pug` that renders an html document that dynamically includes each image in an `img` tag and is served at http://localhost:3000/originals.
+### Exercise 3.1: Add a new pug view at `views/originals.pug` that renders an html document that dynamically includes each image in an `img` tag and is served at http://localhost:3000/originals.
 
 #### Hints:
 
@@ -84,7 +87,7 @@ Test your static files by navigating to http://localhost:3000/images/abc.jpg
 * You will have to load the image paths using the `fs` module (refer to the code you wrote during the previous course).
 * The goal is to render an `<img src="images/..." />` tag for each image in your images directory.
 
-### Exercise 2.2: Add a new route `/thumb/:name` that renders a resized (200x200 max) version of an image using Jimp.
+#### Exercise 3.2: Add a new route `/thumb/:name` that renders a resized (200x200 max) version of an image using Jimp.
 
 #### Hints:
 
@@ -93,8 +96,8 @@ Test your static files by navigating to http://localhost:3000/images/abc.jpg
 * Express can send a binary buffer by calling [`res.send(buffer)`](https://expressjs.com/fr/4x/api.html#res.send). However, you will need to set the content type by calling [`res.type()`](https://expressjs.com/fr/4x/api.html#res.type) before sending the buffer. This allows your browser to decide what to do with the binary file, i.e. display the image.
 * Both methods jimp `image.getBufferAsync()` and express `res.type()` requires the mime type to be sent. Fortunately, jimp has a method [`image.getMIME()`](https://github.com/oliver-moran/jimp/tree/master/packages/jimp#writing-to-buffers) that 
 
-### Exercise 2.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at http://localhost:3000/thumbnails.
+#### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at http://localhost:3000/thumbnails.
 
 #### Hints:
 
-* This exercise is similar to Exercise 2.1, except you will change the `src` attribute in the `<img />` tags to use the `/thumb/:name` route that you added in Exercise 2.2.
+* This exercise is similar to Exercise 3.2, except you will change the `src` attribute in the `<img />` tags to use the `/thumb/:name` route that you added in Exercise 3.2.
