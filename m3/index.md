@@ -56,6 +56,8 @@ For this course we will use [Cloud Firestore](https://firebase.google.com/produc
 
 # 2 Countries DB
 
+There is an existing Firestore DB with single "countries" collection. Here is an example of the /countries/CAN document that contains information about Canada:
+
 ```json
 {
  "altSpellings": ["CA"],
@@ -120,6 +122,7 @@ Setup project to do queries:
    yarn add firebase
 1. Open your project directory in vscode
 1. Add the following file to your project, named `countries.js`:
+
 ```javascript
 'use strict';
 
