@@ -8,18 +8,10 @@
 
 ---
 
-# Libua
+# History
 
 ---
 
-# Les problemes
-
-* semicolon
-* class
-* prototypal inheritance
+# Libua + Event loop
 
 ---
-
-# Bonne pratique
-
-* composition and concatination

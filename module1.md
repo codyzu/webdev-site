@@ -79,7 +79,7 @@ notes:
 # Under Attack!
 # 💣 🔫 ⚔️
 * Microsoft: JScript, silverlight, asp.net, typescript
-* Adobe: flast
+* Adobe: flash
 
 ---
 
