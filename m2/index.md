@@ -1,5 +1,7 @@
 # Module 2: Express with templates
 
+There is a working version of this exercise [here](https://cpinfo-m2-express-pug.firebaseapp.com/).
+
 ## 1 Express hello world
 
 ```cmd
