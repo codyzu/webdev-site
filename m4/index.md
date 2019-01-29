@@ -241,7 +241,7 @@ We can fix the button alignment by adding some CSS style to our `Button` compone
 const Button = (props) => <button type="button" style={{fontSize: '2em', width: '3em'}}>{props.name}</button>
 ```
 
-* Remember, in JSX we can put any JavaScript inside the `{ }` curly braces. Here we are putting an object `{fontSize: '2em'...}` inside the `{ }` curly braces. That is why there are double braces `{{...}}`.
+* Remember, in JSX we can put any JavaScript inside the `{ }` curly braces. Here we are putting an object `{fontSize: '2em'...}` inside the `{ }` curly braces. That is why there are double braces `{ { ... } }`.
 * React lets us write CSS using JavaScript style camelCase. Instead of css `font-size` we use `fontSize`.
 
 The results:
