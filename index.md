@@ -6,3 +6,8 @@ title: Web Development 2019
 
 ## Slides:
 * [module 1](./module1.html)
+
+## Modules:
+
+* [module 2: express + pug](./m2)
+* [module 3: nosql](./m3)

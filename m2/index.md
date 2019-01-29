@@ -1,8 +1,5 @@
 # Module 2: Express with templates
 
-**TODO:**
-- [ ] host a final site in firebase
-
 ## 1 Express hello world
 
 ```cmd
@@ -117,6 +114,16 @@ Test your static files by navigating to [http://localhost:3000/images/abc.jpg](h
 * Jimp can return a binary buffer (a file in memory) by using the [`image.getBufferAsync()`](https://github.com/oliver-moran/jimp/tree/master/packages/jimp#writing-to-buffers) method.
 * Express can send a binary buffer by calling [`res.send(buffer)`](https://expressjs.com/fr/4x/api.html#res.send). However, you will need to set the content type by calling [`res.type()`](https://expressjs.com/fr/4x/api.html#res.type) before sending the buffer. This allows your browser to decide what to do with the binary file, i.e. display the image.
 * Both methods jimp `image.getBufferAsync()` and express `res.type()` requires the mime type to be sent. Fortunately, jimp has a method [`image.getMIME()`](https://github.com/oliver-moran/jimp/tree/master/packages/jimp#writing-to-buffers) that will return the mime type of the original image.
+
+## Bonus: Debugger
+
+In Visual Studio Code:
+* Click on Debug->Add Configuration...
+* Choose Node.js
+* Update the launch configuration `program` to launch your app, i.e. `"${workspaceFolder}/index.js"`
+* Add a breakpoint into your code
+* Click on the debugger on the left of the screen and start debugging
+
 
 #### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at [http://localhost:3000/thumbnails](http://localhost:3000/thumbnails).
 
