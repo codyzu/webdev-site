@@ -115,6 +115,12 @@ Test your static files by navigating to [http://localhost:3000/images/abc.jpg](h
 * Express can send a binary buffer by calling [`res.send(buffer)`](https://expressjs.com/fr/4x/api.html#res.send). However, you will need to set the content type by calling [`res.type()`](https://expressjs.com/fr/4x/api.html#res.type) before sending the buffer. This allows your browser to decide what to do with the binary file, i.e. display the image.
 * Both methods jimp `image.getBufferAsync()` and express `res.type()` requires the mime type to be sent. Fortunately, jimp has a method [`image.getMIME()`](https://github.com/oliver-moran/jimp/tree/master/packages/jimp#writing-to-buffers) that will return the mime type of the original image.
 
+#### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at [http://localhost:3000/thumbnails](http://localhost:3000/thumbnails).
+
+#### Hints:
+
+* This exercise is similar to Exercise 3.2, except you will change the `src` attribute in the `<img />` tags to use the `/thumbs/:image` route that you added in Exercise 3.2.
+
 ## Bonus: Debugger
 
 In Visual Studio Code:
@@ -124,9 +130,3 @@ In Visual Studio Code:
 * Add a breakpoint into your code
 * Click on the debugger on the left of the screen and start debugging
 
-
-#### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at [http://localhost:3000/thumbnails](http://localhost:3000/thumbnails).
-
-#### Hints:
-
-* This exercise is similar to Exercise 3.2, except you will change the `src` attribute in the `<img />` tags to use the `/thumbs/:image` route that you added in Exercise 3.2.
