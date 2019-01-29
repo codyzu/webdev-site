@@ -238,7 +238,9 @@ The results are ugly:
 We can fix the button alignment by adding some CSS style to our `Button` component:
 
 ```jsx
+{% raw %}
 const Button = (props) => <button type="button" style={{fontSize: '2em', width: '3em'}}>{props.name}</button>
+{% endraw %}
 ```
 
 * Remember, in JSX we can put any JavaScript inside the `{ }` curly braces. Here we are putting an object `{fontSize: '2em'...}` inside the `{ }` curly braces. That is why there are double braces `{ { ... } }`.
