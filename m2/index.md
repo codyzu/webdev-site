@@ -13,7 +13,7 @@ yarn init
 
 yarn add express jimp
 ```
-_Press enter in all of the yarn prompts_
+_Press enter in all of the yarn prompts._
 
 Create the file `app.js`:
 ```javascript
@@ -26,7 +26,7 @@ app.get('/', (req, res) => res.send('Hello World!'));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 ```
 
-Test your server with `node .\app.js` and navigate to http://localhost:3000.
+Test your server with `node .\app.js` and navigate to [http://localhost:3000](http://localhost:3000).
 
 
 ## 2 Server side templates with pug
@@ -57,7 +57,7 @@ html
     h1= message
 ```
 
-Test your new index page by  navigating to http://localhost:3000. Open the chrome dev tools and look at the rendered HTML. Notice that the message and title and passed as variables.
+Test your new index page by  navigating to [http://localhost:3000](http://localhost:3000). Open the chrome dev tools and look at the rendered HTML. Notice that the message and title and passed as variables.
 
 Open the chrome dev tools and look at the source file.
 
@@ -76,9 +76,9 @@ app.use(express.static('public'));
 
 Add some large image files (refer to your previous project) into the directory `public/images`.
 
-Test your static files by navigating to http://localhost:3000/images/abc.jpg
+Test your static files by navigating to [http://localhost:3000/images/abc.jpg](http://localhost:3000/images/abc.jpg)
 
-### Exercise 3.1: Add a new pug view at `views/originals.pug` that renders an html document that dynamically includes each image in an `img` tag and is served at http://localhost:3000/originals.
+#### Exercise 3.1: Add a new pug view at `views/originals.pug` that renders an html document that dynamically includes each image in an `img` tag and is served at [http://localhost:3000/originals](http://localhost:3000/originals).
 
 #### Hints:
 
@@ -96,7 +96,7 @@ Test your static files by navigating to http://localhost:3000/images/abc.jpg
 * Express can send a binary buffer by calling [`res.send(buffer)`](https://expressjs.com/fr/4x/api.html#res.send). However, you will need to set the content type by calling [`res.type()`](https://expressjs.com/fr/4x/api.html#res.type) before sending the buffer. This allows your browser to decide what to do with the binary file, i.e. display the image.
 * Both methods jimp `image.getBufferAsync()` and express `res.type()` requires the mime type to be sent. Fortunately, jimp has a method [`image.getMIME()`](https://github.com/oliver-moran/jimp/tree/master/packages/jimp#writing-to-buffers) that 
 
-#### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at http://localhost:3000/thumbnails.
+#### Exercise 3.3: Add a new pug view at `views/thumbnails.pug` that renders each image, but with `src` urls pointing to the `/thumb/xyz.jpg` and is served at [http://localhost:3000/thumbnails](http://localhost:3000/thumbnails).
 
 #### Hints:
 

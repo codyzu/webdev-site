@@ -10,9 +10,9 @@
 - [] add questions
 
 ## 1 What is React
-React is a technology for creating a the "view" of an applicaiton that is based on web technologies.
+React is a technology for creating a the "view" of an application that is based on web technologies.
 
-React is a framework that renders html from javascript. Related to react is the JSX language. JSX allows mixing javascript and html markup in the same file. React tools will transpile JSX files into React objects. The transpiled code is plain JavaScript, coReact is a technology for creating a the "view" of an applicaiton that is based on web technologies.
+React is a framework that renders html from javascript. Related to react is the JSX language. JSX allows mixing javascript and html markup in the same file. React tools will transpile JSX files into React objects. The transpiled code is plain JavaScript, coReact is a technology for creating a the "view" of an application that is based on web technologies.
 
 As mentioned before react is simply the "view" of an application. The other tools and frameworks that are required build an application with React can be called the React ecosystem. For this exercise, we will not spend much time reviewing all of the tools necessary to create an application with react. Instead we will focus on learning how to build a user interface using react.
 
@@ -68,9 +68,9 @@ ReactDOM.render(
 
 ## 2 Components
 
-React allows us to organize our code into small resuable pieces called "components". Compentents are composed together to create complex user intefaces.
+React allows us to organize our code into small reusable pieces called "components". Components are composed together to create complex user interfaces.
 
-There several ways to write components. The tradidtional way is a class based component that extends `React.component`:
+There several ways to write components. The traditional way is a class based component that extends `React.component`:
 
 ```jsx
 class ShoppingList extends React.Component {
@@ -94,7 +94,7 @@ class ShoppingList extends React.Component {
 Components tell react what to render on the screen.
 
 A few important points:
-* A component takes a parementer named `props` and returns a hierarchy of views to display to the user in the `render` method
+* A component takes a parameter named `props` and returns a hierarchy of views to display to the user in the `render` method
 * The `render` function returns a _description_ of what you want to see on the screen. React uses that description and displays the result.
 * `render` actually returns a **React element**, however, most developers use JSX (the HTML looking tags in the above example)
 * JSX mixes HTML syntax and JavaScript! Inside JSX we can put _any_ JavaScript inside `{ }` braces.
@@ -136,7 +136,7 @@ const ShoppingList = (props) => (
 
 ## 4 Calculator
 
-We are going to build a small calculator appliction using React. Here is the goal:
+We are going to build a small calculator application using React. Here is the goal:
 
 ![calculator](./images/calculator.jpg)
 
@@ -161,11 +161,11 @@ In the terminal run:
 npm start
 ```
 
-The above command should open a window in Chrome with a singel button.
+The above command should open a window in Chrome with a single button.
 
 Open the Chrome developer tools.
 
-Insepct the html generated on the page: TODO:...
+Inspect the html generated on the page: TODO:...
 
 Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=fr) and open the "React" tab in the developers tools.
 
@@ -235,7 +235,7 @@ The results are ugly:
 
 ![calculator without css](./images/calculator-no-css.png)
 
-We can fix the button alignment by adding some CSS style to our `Button` componenet:
+We can fix the button alignment by adding some CSS style to our `Button` component:
 
 ```jsx
 const Button = (props) => <button type="button" style={{fontSize: '2em', width: '3em'}}>{props.name}</button>
@@ -252,7 +252,7 @@ The results:
 
 So far we have seen properties. Properties cannot be modified by a component, they are *immutable*. Properties let React efficiently decide when something needs to be rendered. If the properties have not changed, React does not need to re-render the component.
 
-Components can also have state. State can be changed by a component. When the state changes, React re-renders the componenet. **React needs to know when state changes in order for it to decide if a component and it's children need to be re-rendered.** Therefore, when working with state, we have to make React aware.
+Components can also have state. State can be changed by a component. When the state changes, React re-renders the component. **React needs to know when state changes in order for it to decide if a component and it's children need to be re-rendered.** Therefore, when working with state, we have to make React aware.
 
 There are of course multiple ways to manage state. In this course we will use React hooks. A new feature in React! **Hooks let us use functional components and work with state.**
 
@@ -281,7 +281,7 @@ The `useState()` function tells react we want to manage state. It takes a single
 
 The `setResults()` function will update the value of the state. However, it is only accessible inside the the `Calculator` component. However, we want to update the state when a `Button` is pressed (the `onClick` event).
 
-Fortunatetly, we can pass the function as a property to a components children. One solution will be to pass the funtion through each child:
+Fortunately, we can pass the function as a property to a components children. One solution will be to pass the function through each child:
 
 The Calculator:
 ```jsx
@@ -304,7 +304,7 @@ const Calculator = () => {
 }
 ```
 
-The goal is to be able to access `setResults()` inside the `Button` component, therefore, each intermedaite component (`KeyPad` and `KeyRow`) must pass the function to it's children.
+The goal is to be able to access `setResults()` inside the `Button` component, therefore, each intermediate component (`KeyPad` and `KeyRow`) must pass the function to it's children.
 
 The verbose solution:
 
@@ -348,7 +348,7 @@ Now we have an "interactive" keypad. There is still a problem. **The calculator 
 
 One option would be to inspect the current state of the calculator inside the `Button` component (requiring us to pass the state to the children) and adding some logic to update the state as needed. _This would be a poor design, separating the state logic (in the `Button` component) from where it is stored (in the `Calculator` component)._
 
-A better, more maintainable, design would be to perform the logic inside in the `Calculator` component. Fortuneatly, there is another type of React hook that allows us to do just that. A "reducer" in react a function that has tow prameters, the current state and an operation to perform on the state: `reducer(state, operation)`. The "reducer" should return the new state.
+A better, more maintainable, design would be to perform the logic inside in the `Calculator` component. Fortunately, there is another type of React hook that allows us to do just that. A "reducer" in react a function that has two parameters, the current state and an operation to perform on the state: `reducer(state, operation)`. The "reducer" should return the new state.
 
 However, the calculator logic is more complex than simply storing a single number. We will need a more complex state. Something like:
 
@@ -396,18 +396,18 @@ function calculate(state, button) {
         operation: button,
       }
     case '=':
-      // TODO: PERFORM THE CALCULATION AND REUTRN THE MODIFIED STATE
+      // TODO: PERFORM THE CALCULATION AND RETURN THE MODIFIED STATE
       // return {current, next, operation};
       return state;
     case 'C':
-      // When C is presed, we reset the state
+      // When C is pressed, we reset the state
       return {
         current: '0',
         next: null,
         operation: null,
       }
     default:
-      // If a button occured that we did not expect, don't change anything
+      // If a button occurred that we did not expect, don't change anything
       return state;
   }
 }
@@ -462,7 +462,7 @@ Functionally, the calculator is now working, but it is _ugly_! We can easily add
 
 [Bootstrap]() from twitter provides some excellent CSS templates. We will only use the button styling, but Bootstrap offers so much more.
 
-Add some more depenencies to our project.
+Add some more dependencies to our project.
 
 ```cmd
 yarn add bootstrap jquery popper.js
@@ -478,7 +478,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 ```
 
-React lets us add CSS classes with the `className` property. **`class` is a reserved word in JavaScript, so always use `className` in Reat.** We will also simplify the previous `style` that we added:
+React lets us add CSS classes with the `className` property. **`class` is a reserved word in JavaScript, so always use `className` in React.** We will also simplify the previous `style` that we added:
 
 ```jsx
 const Button = (props) => <button
