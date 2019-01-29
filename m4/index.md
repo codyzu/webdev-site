@@ -2,10 +2,10 @@
 
 *TODO:*
 - [] finish calculator tutorial
-- [] pass state setting to children
-- [] add useReducer
+- [x] pass state setting to children
+- [x] add useReducer
 - [] consider context to pass state setter to deep children
-- [] host the final app somewhere
+- [x] host the final app somewhere
 - [] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
 - [] add questions
 
@@ -139,6 +139,8 @@ const ShoppingList = (props) => (
 We are going to build a small calculator application using React. Here is the goal:
 
 ![calculator](./images/calculator.jpg)
+
+You can see a [live demo here](../calculator).
 
 Inside `src/index.js` add the following code:
 
