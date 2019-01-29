@@ -186,7 +186,7 @@ const franceSnapshot2 = await firestore
 console.log(franceSnapshot2.data());
 ```
 
-#### Question 2.1: What is the value of "size" of the FRA document?
+#### Question 2.1: What is the value of `area` in the FRA document?
 
 The DocumentSnapshot has some other interesting properties:
 - `id` - Contains the id of the document. Note that the data of the document and the id are not stored in the same place.
@@ -195,7 +195,7 @@ The DocumentSnapshot has some other interesting properties:
 
 ## 2.3 Simple query
 
-We can query a collection using the where() method of the CollectionReference. A simple query would look like this:
+We can query a collection using the `where()` method of the CollectionReference. A simple query would look like this:
 
 ```javascript
 const european = await countries
@@ -205,7 +205,7 @@ const european = await countries
 
 The first parameter to the `where()` function is the field or path to query on, followed by an operator, followed by the value to compare with.
 
-Executing a query returns a QuerySnapshot. We can access the DocumentSnapshot's via the `docs` property of the QuerySnapshot. The `docs` property contains an array of DocumentSnapshots.
+Executing a query returns a [QuerySnapshot](https://firebase.google.com/docs/reference/js/firebase.firestore.QuerySnapshot). We can access the DocumentSnapshot's via the `docs` property of the QuerySnapshot. The `docs` property contains an array of DocumentSnapshots.
 
 #### Question 2.2: How could you transform the docs property to an array containing the data of each document? Write the line of code below to transform the docs property to an array of document data. (Hint: use map)
 
@@ -213,7 +213,7 @@ There are two other useful properties of a QuerySnapshot:
 - `size` - The number of documents in the snapshot.
 - `empty` - True if there are no documents in the snapshot.
 
-Remember, the `where()` function can use a path to a nested field. For example, to the path to the french language would be 'languages.fra'.
+Remember, the `where()` function can use a path to a nested field. For example, to the path to the french language would be `'languages.fra'`.
 
 #### Question 2.3: How many countries speak "French"?
 
