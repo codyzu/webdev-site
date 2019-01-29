@@ -1,7 +1,7 @@
 # Module 2: Express with templates
 
-*TODO:*
-- [] host a final site in firebase
+**TODO:**
+- [ ] host a final site in firebase
 
 ## 1 Express hello world
 

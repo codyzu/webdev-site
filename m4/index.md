@@ -1,13 +1,13 @@
 # Module 4 React
 
 *TODO:*
-- [] finish calculator tutorial
+- [ ] finish calculator tutorial
 - [x] pass state setting to children
 - [x] add useReducer
-- [] consider context to pass state setter to deep children
+- [ ] consider contextAPI to pass state setter to deep children
 - [x] host the final app somewhere
-- [] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
-- [] add questions
+- [ ] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
+- [ ] add questions
 
 ## 1 What is React
 React is a technology for creating a the "view" of an application that is based on web technologies.
@@ -240,7 +240,7 @@ The results are ugly:
 We can fix the button alignment by adding some CSS style to our `Button` component:
 
 ```jsx
-{% raw %}const Button = (props) => <button type="button" style={{fontSize: '2em', width: '3em'}}>{props.name}</button>{% endraw %}
+const Button = (props) => <button type="button" style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}>{props.name}</button>
 ```
 
 * Remember, in JSX we can put any JavaScript inside the `{ }` curly braces. Here we are putting an object `{fontSize: '2em'...}` inside the `{ }` curly braces. That is why there are double braces `{% raw %}{{...}}{% endraw %}`.
@@ -335,7 +335,7 @@ _Finally..._ `Button`:
 ```jsx
 const Button = (props) => <button
     type="button"
-    style={{fontSize: '2em', width: '3em'}}
+    style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}
     onClick={() => props.setResults(props.name)}
   >
       {props.name}
@@ -445,7 +445,7 @@ We renamed the function that changes the state to `buttonPressed`. Update the `B
 ```jsx
 const Button = (props) => <button
     type="button"
-    style={{fontSize: '2em', width: '3em'}}
+    style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}
     onClick={() => props.buttonPressed(props.name)}
   >
       {props.name}
@@ -486,7 +486,7 @@ React lets us add CSS classes with the `className` property. **`class` is a rese
 const Button = (props) => <button
     type="button"
     className='btn btn-outline-primary btn-lg'
-    style={{width: '3em'}}
+    style={% raw %}{{width: '3em'}}{% endraw %}
     onClick={() => props.buttonPressed(props.name)}
   >
       {props.name}
