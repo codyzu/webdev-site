@@ -116,8 +116,10 @@ Setup project to do queries:
    ```
    _Press enter in all of the prompts._
 1. Install the firebase client library:
+   
    ```cmd
    yarn add firebase
+   ```
 1. Open your project directory in vscode
 1. Add the following file to your project, named `countries.js`:
 
