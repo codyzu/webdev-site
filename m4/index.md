@@ -1,59 +1,34 @@
 # Module 4 React
 
-*TODO:*
-- [ ] finish calculator tutorial
-- [x] pass state setting to children
-- [x] add useReducer
-- [ ] consider contextAPI to pass state setter to deep children
-- [x] host the final app somewhere
-- [ ] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
-- [ ] add questions
-
 ## 1 What is React
-React is a technology for creating a the "view" of an application that is based on web technologies.
+React is a JavaScript library for creating the user interface ("view") based on web technologies (HTML). React _renders_ html from JavaScript.
 
-React is a framework that renders html from javascript. Related to react is the JSX language. JSX allows mixing javascript and html markup in the same file. React tools will transpile JSX files into React objects. The transpiled code is plain JavaScript, coReact is a technology for creating a the "view" of an application that is based on web technologies.
+## 2 What React is not
 
-As mentioned before react is simply the "view" of an application. The other tools and frameworks that are required build an application with React can be called the React ecosystem. For this exercise, we will not spend much time reviewing all of the tools necessary to create an application with react. Instead we will focus on learning how to build a user interface using react.
+React **is not** a complete framework for creating a web application. React provides the tools for creating the user interface ("view") and does not include a framework for fetching the data ("model") or the logic for deciding what to display ("controller").
 
-## What React is not
+**Angular** is a compete framework for creating web applications. **React** is a library for rendering the user interface.
 
-## JSX
-
-## Components
-React projects are divided into components. Components allow developers to re-use and share code. Components also allow encapsulation of logic.
-
-A component allows us to organize the logic (JavaScript) and display (HTML) into a single element.
-
-There are 3 primary ways to write components:
-
-1. Calling the react JavaScript functions directly.
-1. Writing classes that inherit from React and implement a `render()` function which returns JSX.
-1. Functional components that return JSX.
-
-## Properties and 1-way data binding
-
-
-
-## State
-
-## Setup
+## 3 Setup
 
 Create a react project and update the version of react.
-```bash
+
+```cmd
 yarn create react-app m4
 cd m4
 yarn add react@next react-dom@next
 ```
 
-Delete all of the files inside your `src` directory. Either with Windows Explorer or in the console:
+_We update the version of React to access some of the latest features._
+
+**Delete** all of the files inside your `src` directory. Either with Windows Explorer or in the console:
 
 ```cmd
 cd src
 del *
 ```
 
-Add a file `src/index.js`:
+Add the file `src/index.js`:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -66,7 +41,7 @@ ReactDOM.render(
 );
 ```
 
-## 2 Components
+## 4 Components
 
 React allows us to organize our code into small reusable pieces called "components". Components are composed together to create complex user interfaces.
 
@@ -91,7 +66,7 @@ class ShoppingList extends React.Component {
 // Example usage: <ShoppingList name="Mark" />
 ```
 
-Components tell react what to render on the screen.
+**Components tell react what to render on the screen.**
 
 A few important points:
 * A component takes a parameter named `props` and returns a hierarchy of views to display to the user in the `render` method
@@ -111,7 +86,7 @@ return React.createElement('div', {className: 'shopping-list'},
 
 ☝️ Here we are only rendering typical HTML elements (`<div>`, `<h1>`, etc.), but we can render other react components in the same way. For example we can now render the entire shopping list with `<ShoppingList />`. This is the magic of React!
 
-## 3 Functional Components
+## 5 Functional Components
 
 While class components are very common, they require a lot of typing and have pitfalls around using the `this` pointer that require a extra care. A more modern way to write components is using a function syntax, also known as **Functional Components**.
 
@@ -134,7 +109,7 @@ const ShoppingList = (props) => (
 
 ☝️ The above _functional_ syntax requires less typing and removes some of the strange problems involving `this`, since we don't use it!
 
-## 4 Calculator
+## 6 Calculator
 
 We are going to build a small calculator application using React. Here is the goal:
 
@@ -142,59 +117,63 @@ We are going to build a small calculator application using React. Here is the go
 
 You can see a [live demo here](../calculator).
 
-Inside `src/index.js` add the following code:
+#### Exercise 6.1: The button component.
 
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
+1. Inside `src/index.js` add the following code:
 
-// YOUR CODE HERE
+   ```jsx
+   import React from 'react';
+   import ReactDOM from 'react-dom';
 
-const Button = (props) => <button type="button">{props.name}</button>
+   // YOUR CODE HERE
 
-ReactDOM.render(
-  <Button name='1'/>,
-  document.getElementById('root')
-);
-```
+   const Button = (props) => <button type="button">{props.name}</button>
 
-In the terminal run:
-```cmd
-npm start
-```
+   ReactDOM.render(
+     <Button name='1'/>,
+     document.getElementById('root')
+   );
+   ```
+1. In the terminal run:
+   ```cmd
+   npm start
+   ```
+   The above command should open a window in Chrome with a single button.
+1. Inspect the html generated on the page:
 
-The above command should open a window in Chrome with a single button.
+   ![inspect](images/inspect.jpg)
 
-Open the Chrome developer tools.
+   ![elements dev tools](images/dev-tools-elements.png)
 
-Inspect the html generated on the page: TODO:...
+1. Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=fr) and open the "React" tab in the developers tools.
 
-Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=fr) and open the "React" tab in the developers tools.
+1. Open the React tab in your developer tools:
 
-#### Question 4.1 TODO:
+   ![react dev tools](images/dev-tools-react.png)
+
+#### Question 6.1: Inside the react dev tools, what happens if you change the property `name` the button component?
+
+#### Exercise 6.2: The KeyRow component.
 
 
-Add new `KeyRow` component after the declaration of the `Button` component:
+1. Add new `KeyRow` component _after_ the declaration of the `Button` component:
+   ```jsx
+   const KeyRow = (props) => {
+     const buttons = props.row.map(k => <Button name={k} />);
+     return <div>{buttons}</div>;
+   }
+   ```
+   * _💡 A functional component is simply a function that returns JSX directly `() => <div>...</div>` or can calculate components with JavaScript and return JSX at the end of the function ☝️._
 
-```jsx
-const KeyRow = (props) => {
-  const buttons = props.row.map(k => <Button name={k} />);
-  return <div>{buttons}</div>;
-}
-```
+1. Update the call to `ReactDOM.render()` to use the new `KeyRow` component:
 
-Update the call to `ReactDOM.render()` to use the new `KeyRow` component:
-
-```jsx
-ReactDOM.render(
-  <KeyRow row={['1', '2', '3']}/>,
-  document.getElementById('root')
-);
-```
-
-_Note:_
-* The component is simply a function that can either return JSX directly `() => <div>...</div>` or can calculate components with JavaScript and return the JSX at the end of the function ☝️.
-* Inside JSX, we can put any JavaScript inside the `{ }` curly braces.
+   ```jsx
+   ReactDOM.render(
+     <KeyRow row={['1', '2', '3']}/>,
+     document.getElementById('root')
+   );
+   ```
+   * _💡 Inside JSX, we can put **any JavaScript** inside the `{ }` curly braces._
 
 The above code should result in this:
 
@@ -572,4 +551,13 @@ npm run dev
 ```
 
 Navigate to http://localhost:1234
+
+*TODO:*
+- [ ] finish calculator tutorial
+- [x] pass state setting to children
+- [x] add useReducer
+- [ ] consider contextAPI to pass state setter to deep children
+- [x] host the final app somewhere
+- [ ] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
+- [ ] add questions
 

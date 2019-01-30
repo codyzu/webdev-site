@@ -373,3 +373,21 @@ However, there are also some **disadvantages**:
 * aggregations can be difficult or impossible, requiring unique solutions
 * no support for text search or string wildcards, possibly requiring 3rd party system
 * have limits to parallel document writes, requiring "sharded" counters
+
+<!--
+Querry all 
+
+Run some querries
+
+Show problems
+
+Show other DB's with solutions
+
+Text search
+option 1: split titles into array and use array_contains. note: we can only contain a single array_contains per query... have to manually "OR" things together.
+option 2: use 3rd party library
+discussion: is this a big deal??? if we really need full text search, use aglolia or elastic search. For AirBnB, we will search by postal code. Or use a dedicated form (allowing us to create indexes for all possible combinations.
+
+Counters
+Aggregation Queries
+-->
