@@ -175,88 +175,103 @@ You can see a [live demo here](../calculator).
    ```
    * _💡 Inside JSX, we can put **any JavaScript** inside the `{ }` curly braces._
 
-The above code should result in this:
+1. Test your changes in Chrome, it should result the following:
 
-![keyrow](./images/keyrow.png)
+   ![keyrow](./images/keyrow.png)
 
 
-#### Exercise 4.1 Add `KeyPad` component that takes property names `keys` that is a nested array of keys:
+#### Exercise 6.3 Add `KeyPad` component that takes property names `keys` that is a nested array of keys:
 * the `keys` property should except a 2-dimensional array of keys, i.e. `[['1', '2', '3'], ['4', '5', '6']]`
 * each array, i.e. `['1', '2', '3']` in the keys property should render a `KeyRow`
 * the goal is to build on the previous components
-* update your call to `ReactDOM.render()` to instantiate your `KeyPad`.
-
-The above exercise should look like this:
-
-![keypad](./images/keypad.png)
-
-Next we will add a final `Calculator` component that will encapsulate all of the calculator logic, render the `KeyPad` component and the results.
-
-```jsx
-const Calculator = () => {
-  const keys = [
-    ['1', '2', '3', '+'],
-    ['4', '5', '6', '-'],
-    ['7', '8', '9', '='],
-    ['C', '0']
-  ];
-  return ( 
-    <div>
-      <KeyPad keys={keys} />
-      <h1>0</h1>
-    </div>
+* update your call to `ReactDOM.render()` to instantiate your `KeyPad`:
+  ```jsx
+  ReactDOM.render(
+    <KeyPad keys={[['1', '2', '3'], ['4', '5', '6']]}/>,
+    document.getElementById('root')
   );
-}
-```
+  ```
+* The result should look like this
 
-_Note:_
-* the component has no properties so there is no `props` parameter
+  ![keypad](./images/keypad.png)
 
-The results are ugly:
+#### Exercise 6.4: The calculator component.
 
-![calculator without css](./images/calculator-no-css.png)
+1. The final `Calculator` component that will encapsulate all of the calculator logic, render the `KeyPad` component, and the results.
 
-We can fix the button alignment by adding some CSS style to our `Button` component:
+   ```jsx
+   const Calculator = () => {
+     const keys = [
+       ['1', '2', '3', '+'],
+       ['4', '5', '6', '-'],
+       ['7', '8', '9', '='],
+       ['C', '0']
+     ];
+     return ( 
+       <div>
+         <KeyPad keys={keys} />
+         <h1>0</h1>
+       </div>
+     );
+   }
+   ```
 
-```jsx
-const Button = (props) => <button type="button" style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}>{props.name}</button>
-```
+   * the component has no properties so there is no `props` parameter
+
+1. Observe the results in Chrome:
+
+   ![calculator without css](./images/calculator-no-css.png)
+
+☝️ The results are **ugly!**
+
+#### Exercise 6.5: A little style.
+
+* Fix the button alignment by adding some CSS style to the `Button` component:
+
+  ```jsx
+  const Button = (props) => <button type="button" style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}>{props.name}</button>
+  ```
 
 * Remember, in JSX we can put any JavaScript inside the `{ }` curly braces. Here we are putting an object `{fontSize: '2em'...}` inside the `{ }` curly braces. That is why there are double braces `{% raw %}{{...}}{% endraw %}`.
-* React lets us write CSS using JavaScript style camelCase. Instead of css `font-size` we use `fontSize`.
+* React lets us write CSS using JavaScript style camelCase. Instead of css [font-size](https://developer.mozilla.org/fr/docs/Web/CSS/font-size) we use `fontSize`.
+* The above should result in:
 
-The results:
+  ![calculator with css](./images/calculator-with-css.png)
 
-![calculator with css](./images/calculator-with-css.png)
-
-## State
+## 7 State
 
 So far we have seen properties. Properties cannot be modified by a component, they are *immutable*. Properties let React efficiently decide when something needs to be rendered. If the properties have not changed, React does not need to re-render the component.
 
 Components can also have state. State can be changed by a component. When the state changes, React re-renders the component. **React needs to know when state changes in order for it to decide if a component and it's children need to be re-rendered.** Therefore, when working with state, we have to make React aware.
 
-There are of course multiple ways to manage state. In this course we will use React hooks. A new feature in React! **Hooks let us use functional components and work with state.**
+There are of course multiple ways to manage state. In this course we will use [React hooks](https://reactjs.org/docs/hooks-intro.html). A new feature in React! **Hooks let us use functional components and work with state.**
 
-To use hooks we need to import the hooks functions from React.
+#### Exercise 7.1: useState hook
 
-In `index.js`, modify `import React from 'react'` to:
-```javascript
-import React, {useState, useReducer} from 'react';
-```
+1. To use hooks we need to import the hooks functions from React. In `index.js`, modify `import React from 'react'` to:
+   ```javascript
+   import React, {useState, useReducer} from 'react';
+   ```
 
-Next, modify the `Calculator` component to store the results in state:
+1. Modify the `Calculator` component to store the results in state:
 
-```jsx
-const Calculator = () => {
-  const [results, setResults] = useState('0');
-  const keys = [
-    ['1', '2', '3', '+'],
-    // ...
-  ];
-  // ...
-  return // ...
-}
-```
+    ```jsx
+    const Calculator = () => {
+      const [results, setResults] = useState('0');
+      const keys = [
+        ['1', '2', '3', '+'],
+        ['4', '5', '6', '-'],
+        ['7', '8', '9', '='],
+        ['C', '0']
+      ];
+      return ( 
+        <div>
+          <KeyPad keys={keys} />
+          <h1>{results}</h1>
+        </div>
+      );
+    }
+    ```
 
 The `useState()` function tells react we want to manage state. It takes a single parameter, the initial value of the state: `'0'` in our case. It has 2 return values, the current value of the state and function we must call to modify state. **We should never modify the state directly, instead we must modify the state through the function that React provides.** This keeps react aware of any changes in state, allow it to decide when something must be re-rendered.
 
@@ -287,7 +302,7 @@ const Calculator = () => {
 
 The goal is to be able to access `setResults()` inside the `Button` component, therefore, each intermediate component (`KeyPad` and `KeyRow`) must pass the function to it's children.
 
-The verbose solution:
+**Option 1:** _The hard way._ We can simple pass the `setResults()` function to each child component:
 
 `KeyPad`:
 ```jsx
@@ -297,7 +312,10 @@ const KeyPad = (props) => {
 }
 ```
 
-☝️ However, we can take advantage of ES6 JavaScript, simply "relay" the properties using the `...` operator:
+😿️
+
+**Option 2:** _The easier way._ We can take advantage of ES6 JavaScript, simply "relay" the properties using the `...` operator:
+
 ```jsx
 const KeyRow = (props) => {
   const buttons = props.keys.map(k => <Button name={k} {...props} />);
@@ -310,7 +328,7 @@ const KeyPad = (props) => {
 }
 ```
 
-_Finally..._ `Button`:
+_Finally,_ we can access the setResults inside our `Button`:
 ```jsx
 const Button = (props) => <button
     type="button"
@@ -321,17 +339,19 @@ const Button = (props) => <button
   </button>
 ```
 
-☝️ _Note: to set the state with the value of the button, we use `onClick={() => props.setResults(props.name)}`._
+⚠️ ☝️ **To set the state with the value of the button, we use `onClick={() => props.setResults(props.name)}`.**
 
-#### Exercise ??: Test the calculator in the browser. Clicking on a button should update the character displayed below the keypad.
+#### Question 7.1: Test the calculator in Chrome. Clicking on a button should update the character displayed below the keypad. What happens to the "state" when you click on a button?
 
-Now we have an "interactive" keypad. There is still a problem. **The calculator is useless!** It does not calculate anything. Setting the key is not enough... we actually need _calculate_ something when a key is pressed.
+Now we have an "interactive" keypad. _There is still a problem._ **The calculator is useless!** It does not calculate anything. Setting the key is not enough... we actually need _calculate_ something when a key is pressed.
 
 One option would be to inspect the current state of the calculator inside the `Button` component (requiring us to pass the state to the children) and adding some logic to update the state as needed. _This would be a poor design, separating the state logic (in the `Button` component) from where it is stored (in the `Calculator` component)._
 
 A better, more maintainable, design would be to perform the logic inside in the `Calculator` component. Fortunately, there is another type of React hook that allows us to do just that. A "reducer" in react a function that has two parameters, the current state and an operation to perform on the state: `reducer(state, operation)`. The "reducer" should return the new state.
 
-However, the calculator logic is more complex than simply storing a single number. We will need a more complex state. Something like:
+## 8 useReducer hook
+
+**The calculator logic is more complex than simply storing a single number.** We will need a more complex state:
 
 ```javascript
 {
@@ -349,151 +369,153 @@ function calculate(state, button) {
 }
 ```
 
-For our calculator, the operation is the button that was pressed. The reducer should decide what to do based on the operation and must always return the new state (could be the same as the old state). The `switch` statement is perfect since it lets us "fall through" multiple buttons to the same logic.
+For our calculator, our reducer "operation" is the button that was pressed. The reducer should decide what to do based on the operation and must always return the new state (could be the same as the old state). The `switch` statement is perfect since it lets us "fall through" multiple buttons to the same logic.
 
-Here is template of your `calculate` function.
+#### Exercise 8.1 Add the calculate reducer.
 
-```javascript
-function calculate(state, button) {
-  switch(button) {
-    case '1':
-    case '2':
-    case '3':
-    case '4':
-    case '5':
-    case '6':
-    case '7':
-    case '8':
-    case '9':
-    case '0':
-      // TODO: RETURN THE MODIFIED STATE
-      // return {current, next, operation};
-      return state
-    case '+':
-    case '-':
-      return {
-        current: state.next || '0',
-        next: null,
-        operation: button,
+1. Add following function to your application. _The function is not yet complete._
+    ```javascript
+    function calculate(state, button) {
+      switch(button) {
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case '0':
+          // TODO: RETURN THE MODIFIED STATE
+          // return {current, next, operation};
+          return state
+        case '+':
+        case '-':
+          return {
+            current: state.next || '0',
+            next: null,
+            operation: button,
+          }
+        case '=':
+          // TODO: PERFORM THE CALCULATION AND RETURN THE MODIFIED STATE
+          // return {current, next, operation};
+          return state;
+        case 'C':
+          // When C is pressed, we reset the state
+          return {
+            current: '0',
+            next: null,
+            operation: null,
+          }
+        default:
+          // If a button occurred that we did not expect, don't change anything
+          return state;
       }
-    case '=':
-      // TODO: PERFORM THE CALCULATION AND RETURN THE MODIFIED STATE
-      // return {current, next, operation};
-      return state;
-    case 'C':
-      // When C is pressed, we reset the state
-      return {
-        current: '0',
-        next: null,
-        operation: null,
-      }
-    default:
-      // If a button occurred that we did not expect, don't change anything
-      return state;
-  }
-}
-```
+    }
+    ```
 
-In our `Calculator` component, we will replace our call to `useState` to `useReducer`:
+1. In the `Calculator` component, replace the call to `useState` to `useReducer`:
 
-```jsx
-const Calculator = () => {
-  const [state, buttonPressed] = useReducer(calculate, {current: '0', next: null, operation: null});
-  console.log(state);  // Log the state for debugging
+    ```jsx
+    const Calculator = () => {
+      const [state, buttonPressed] = useReducer(calculate, {current: '0', next: null, operation: null});
+      console.log(state);  // Log the state for debugging
 
-  const keys = [
-    ['1', '2', '3', '+'],
-    ['4', '5', '6', '-'],
-    ['7', '8', '9', '='],
-    ['C', '0']
-  ];
+      const keys = [
+        ['1', '2', '3', '+'],
+        ['4', '5', '6', '-'],
+        ['7', '8', '9', '='],
+        ['C', '0']
+      ];
 
-  // NOTE! we pass buttonPressed to the KeyPad
-  return ( 
-    <div>
-      // Pass the buttonPressed reducer to the children
-      <KeyPad keys={keys} buttonPressed={buttonPressed} />
-      <h1>{state.next || state.current}</h1>
-    </div>
-  );
-}
-```
+      // NOTE! we pass buttonPressed to the KeyPad
+      return ( 
+        <div>
+          // Pass the buttonPressed reducer to the children
+          <KeyPad keys={keys} buttonPressed={buttonPressed} />
+          <h1>{state.next || state.current}</h1>
+        </div>
+      );
+    }
+    ```
 
-We renamed the function that changes the state to `buttonPressed`. Update the `Button` component to call this function when the `onClick` event occurs:
+   * The function that changes the state was renamed to `buttonPressed`.
 
-```jsx
-const Button = (props) => <button
-    type="button"
-    style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}
-    onClick={() => props.buttonPressed(props.name)}
-  >
-      {props.name}
-  </button>
-```
+1. Update the `Button` component to call the `buttonPressed()` function when the `onClick` event occurs:
 
-Open the console view in the Chrome developer tools and observe what happens when you press the button on the calculator. Specifically, the buttons `'+'`, `'-'`, and `'='`. For now the other buttons don't do anything.
+    ```jsx
+    const Button = (props) => <button
+        type="button"
+        style={% raw %}{{fontSize: '2em', width: '3em'}}{% endraw %}
+        onClick={() => props.buttonPressed(props.name)}
+      >
+          {props.name}
+      </button>
+    ```
 
-#### Exercise 4.3: Complete the logic inside the calculate function to handle the buttons 0-9 and =.
+1. Open the console view in the Chrome developer tools and observe what happens when you press the button on the calculator.
 
-## State Management
+#### Question 8.1 What happens when you press the buttons `'+'`, `'-'`, and `'='`?
 
-## Styling
+#### Exercise 8.2: Complete the logic inside the calculate function to handle the buttons 0-9 and =.
 
-Functionally, the calculator is now working, but it is _ugly_! We can easily add some style with CSS. One option would be to improve the `style` property of the `Button` component. Or we can use some preconfigured styling.
+## 9 State Management
+
+Managing state is a complicated task. Large projects often store the majority of the state in a single place, called "global state". [Redux](https://redux.js.org/) is a tool for managing state. [react-redux](https://react-redux.js.org/) is library to work with redux in React.
+
+## 10 Styling
+
+Functionally, the calculator is now working, but it is _still **ugly**_! We can easily add some style with CSS. One option would be to manually improve the `style` property of the `Button` component.
+
+Or we can use some **preconfigured styling**.
 
 [Bootstrap]() from twitter provides some excellent CSS templates. We will only use the button styling, but Bootstrap offers so much more.
 
-Add some more dependencies to our project.
+#### Exercise 10.1: Styling with Bootstrap.
 
-```cmd
-yarn add bootstrap jquery popper.js
-```
+1. Add some more dependencies to our project.
 
-Bootstrap requires jquery and popper.js, but they are not installed automatically. Therefor, we have installed them explicitly.
+    ```cmd
+    yarn add bootstrap jquery popper.js
+    ```
 
-`src/index.js`:
-```javascript
-import React, {useReducer} from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
-```
+    * Bootstrap requires [jquery](https://jquery.com/) and [popper.js](https://popper.js.org/), but they are not installed automatically. Therefor, we must install them explicitly.
 
-React lets us add CSS classes with the `className` property. **`class` is a reserved word in JavaScript, so always use `className` in React.** We will also simplify the previous `style` that we added:
+1. Add bootstrap to `src/index.js`:
+    ```javascript
+    import React, {useReducer} from 'react';
+    import ReactDOM from 'react-dom';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'bootstrap';
+    ```
 
-```jsx
-const Button = (props) => <button
-    type="button"
-    className='btn btn-outline-primary btn-lg'
-    style={% raw %}{{width: '3em'}}{% endraw %}
-    onClick={() => props.buttonPressed(props.name)}
-  >
-      {props.name}
-  </button>
-```
+1. React lets us add CSS classes with the `className` property. **`class` is a reserved word in JavaScript, so always use `className` in React.** We will also simplify the previous `style` in our `Button` component:
 
-Now we should have some beautiful style!
+    ```jsx
+    const Button = (props) => <button
+        type="button"
+        className='btn btn-outline-primary btn-lg'
+        style={% raw %}{{width: '3em'}}{% endraw %}
+        onClick={() => props.buttonPressed(props.name)}
+      >
+          {props.name}
+      </button>
+    ```
 
-![calculator with bootstrap](./images/calculator.jpg)
+1. Observe the calculator in Chrome. There should be some beautiful style:
 
-Checkout the bootstrap docs for other possibilities, starting with the [Button docs](https://getbootstrap.com/docs/4.0/components/buttons/).
+    ![calculator with bootstrap](./images/calculator.jpg)
 
-#### Exercise 4.4: Modify the CSS classes to give the calculator the following style.
+#### Exercise 4.4: Modify the CSS classes to give the calculator the following style:
 
 ![](./images/calculator-orange.jpg)
 
+* Checkout the bootstrap docs for several possibilities, starting with the [Button docs](https://getbootstrap.com/docs/4.0/components/buttons/).
 
 
 
-
-
-
-
-
-
-
-
-
+<!--
 
 Clone this github repository: xxx
 
@@ -508,41 +530,6 @@ nsisting of classes and function calls.
 
 As mentioned before react is simply the "view" of an application. The other tools and frameworks that are required build an application with React can be called the React ecosystem. For this exercise, we will not spend much time reviewing all of the tools necessary to create an application with react. Instead we will focus on learning how to build a user interface using react.
 
-Clone this github repository: xxx
-
-git clone xxx
-
-cd xxx
-
-npm run dev
-
-The above repository is an application based on the next.js framework. Next.js is framework for working with react 
-nsisting of classes and function calls.
-
-As mentioned before react is simply the "view" of an application. The other tools and frameworks that are required build an application with React can be called the React ecosystem. For this exercise, we will not spend much time reviewing all of the tools necessary to create an application with react. Instead we will focus on learning how to build a user interface using react.
-
-Clone this github repository: xxx
-
-git clone xxx
-
-cd xxx
-
-npm run dev
-
-The above repository is an application based on the next.js framework. Next.js is framework for working with react 
-nsisting of classes and function calls.
-
-As mentioned before react is simply the "view" of an application. The other tools and frameworks that are required build an application with React can be called the React ecosystem. For this exercise, we will not spend much time reviewing all of the tools necessary to create an application with react. Instead we will focus on learning how to build a user interface using react.
-
-Clone this github repository: xxx
-
-git clone xxx
-
-cd xxx
-
-npm run dev
-
-The above repository is an application based on the next.js framework. Next.js is framework for working with react 
 
 ```bash
 yarn create next-app module4
@@ -561,3 +548,4 @@ Navigate to http://localhost:1234
 - [ ] add bonus: 2nd page that fetches countries from module 3 and renders a list of countries
 - [ ] add questions
 
+-->
