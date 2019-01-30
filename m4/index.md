@@ -458,7 +458,9 @@ For our calculator, our reducer "operation" is the button that was pressed. The 
 
 #### Question 8.1 What happens when you press the buttons `'+'`, `'-'`, and `'='`?
 
-#### Exercise 8.2: Complete the logic inside the calculate function to handle the buttons 0-9 and =.
+#### Exercise 8.2: Complete the logic inside the `calculate()` function to handle the buttons 0-9 and =.
+
+_Hint: think about how a calculator should function. Refer to the [demo](../calculator)_ for an example.
 
 ## 9 State Management
 
