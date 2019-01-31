@@ -141,13 +141,15 @@ You can see a [live demo here](../calculator).
    npm start
    ```
    The above command should open a window in Chrome with a single button.
-1. Inspect the html generated on the page:
+1. Inspect the html generated on the page (F12):
 
    ![inspect](images/inspect.jpg)
 
    ![elements dev tools](images/dev-tools-elements.png)
 
 1. Install the [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=fr) and open the "React" tab in the developers tools.
+    
+   **If you cannot install the React Developer Tools for Chrome, use Firefox and install the [React Developer Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)**
 
 1. Open the React tab in your developer tools:
 
