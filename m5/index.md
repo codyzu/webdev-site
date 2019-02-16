@@ -354,14 +354,38 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
 * What happens when you use the back and forward buttons?
 * What happens when you change the URL in the address bar?
 
+## Client and Server links
 
-#### Bonus: Add make the `Link` bold when you 
+   1. Add an anchor `<a href="...">` link to your cloud function inside the `App` component to link to your `helloWorld` cloud function.
 
-add route to calculator app
+   ```jsx
+   const App = () => 
+     <>
+       <Link to='/'>Home</Link> <Link to='/history'>History</Link> <a href="/helloWorld">Hello</a>
+       <Switch>
+         <Route exact path='/' component={Calculator} />
+         <Route exact path='/history' component={History} />
+       </Switch>
+     </>
+   ```
+
+   1. Locally, the new link won't work. Instead, no components after the links will get rendered.
+
+   1. Deploy your entire application to Firebase:
+   ```cmd
+   yarn build
+   npm run firebase -- deploy
+   ```
+
+   1. You just deployed an react application that consists of both client and server side code! Click on the links and see that some navigation happens in browser and some happens inside the cloud function.
+
+#### Bonus: Add the code to make the `Link` bold when you navigate to page. i.e. When the calculator is displayed, the `Home` link should be bold. When the history page is displayed, the `History` link should be bold.
+
+💡 Hint: replace `Link` with `NavLink` (see the [documentation here](https://reacttraining.com/react-router/web/api/NavLink) and the example for the `activeStyles` property).
+
+
+
 
 fetch saved data from cloud function in new route
 
 Bonus read/write data to firestore
-
-
-## Do stuff
