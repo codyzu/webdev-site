@@ -311,7 +311,7 @@ The goal is to be able to access `setResults()` inside the `Button` component, t
 `KeyPad`:
 ```jsx
 const KeyPad = (props) => {
-  const rows = props.keys.map(r => <KeyRow keys={r} setResults={props.setResults} />);
+  const rows = props.keys.map(r => <KeyRow rows={r} setResults={props.setResults} />);
   return <div>{rows}</div>;
 }
 ```
@@ -322,12 +322,12 @@ const KeyPad = (props) => {
 
 ```jsx
 const KeyRow = (props) => {
-  const buttons = props.keys.map(k => <Button name={k} {...props} />);
+  const buttons = props.row.map(k => <Button {...props} name={k} />);
   return <div>{buttons}</div>;
 }
 
 const KeyPad = (props) => {
-  const rows = props.keys.map(r => <KeyRow keys={r} {...props} />);
+  const rows = props.keys.map(r => <KeyRow {...props} rows={r} />);
   return <div>{rows}</div>;
 }
 ```
