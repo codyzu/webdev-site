@@ -383,7 +383,64 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
 
 💡 Hint: replace `Link` with `NavLink` (see the [documentation here](https://reacttraining.com/react-router/web/api/NavLink) and the example for the `activeStyles` property).
 
+## Load the calculator from a query parameter
 
+1. Add the [query-string](https://github.com/sindresorhus/query-string) package to your project. This package parses the query string: everything after a `?` in a URL i.e. http://localhost:3000?value=5
+
+   ```cmd
+   yarn add query-string
+   ```
+1. Modify `Calculator.js` set the _next_ value of the initial state based a `value` set in the query string.
+
+   ```jsx
+   const Calculator = ({location}) => {
+     // Parse the query string
+     const params = qs.parse(location.search);
+     // Use the value, only if it is a valid number
+     const initial = Number.isNaN(parseInt(params.value)) ? null : params.value;
+     // Use the parsed value for the "next" field in the initial state
+     const [state, buttonPressed] = useReducer(calculate, {current: '0', next: initial, operation: null});
+     console.log(state);  // Log the state for debugging
+
+     const keys = [
+       ['1', '2', '3', '+'],
+       ['4', '5', '6', '-'],
+       ['7', '8', '9', '='],
+       ['C', '0']
+     ];
+     return ( 
+       <div>
+         <KeyPad keys={keys} buttonPressed={buttonPressed} />
+         <h1>{state.next || state.current}</h1>
+       </div>
+     );
+   }
+   ```
+
+   * The `location` property is added by react router since our component is the child of a route. See [here for the documentation](https://reacttraining.com/react-router/web/api/location)
+   * The query string is located in `location.search`. This needs to be parsed by the `query-string` package.
+   * Before using the `value` field of the query string in our initial state, we validate it. What if it was a string, like `abc`?
+   * We pass the parsed value into the initial state when we call `useReducer`.
+
+1. Test the calculator locally by navigating to http://localhost:3000/value=1000
+
+1. Now add some useful `Link`'s to the `History` component in `History.js`:
+
+   ```jsx
+   import React from 'react';
+   import {Link} from 'react-router-dom';
+
+   const History = () =>
+     <>
+       <h1>history</h1>;
+       <ul>
+         <li><Link to='/?value=3.14'>pi</Link></li>
+         <li><Link to='/?value=1000'>mil</Link></li>
+       </ul>
+     </>;
+
+   export default History;
+   ```
 
 
 fetch saved data from cloud function in new route
