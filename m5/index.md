@@ -140,7 +140,7 @@ As a **web developer**, Firebase offers several useful services listed below.
    yarn --ignore-engines
    ```
 
-   ⚠️ _Note: `yarn` or `yarn install` will enforce the engine that we added to `package.json`. Therefore, we should use the `--ignore-engines` flag with yarn or use `npm install`._
+   ⚠️ _Note: `yarn` or `yarn install` will enforce the engine that we added to `package.json`. Therefore, we should use the `--ignore-engines` flag with yarn or use `npm install`. You can make this permanent for your `functions` directory by running `echo "--ignore-engines true" > .yarnrc`_
 
 1. In vscode, open `functions/index.js` and **un-comment** all of the lines of code.
 
