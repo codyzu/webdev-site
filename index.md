@@ -12,14 +12,15 @@ title: Web Development 2019
 * [module 2: express + pug](./m2)
 * [module 3: nosql](./m3)
 * [module 4: react](./m4)
-* module 4: cloud
+* module 5: cloud
   1. [intro](./m5/part1-intro)
   1. [hosting](./m5/part2-hosting)
   1. [cloud functions](./m5/part3-functions)
-  1. [firestore](./m5/part4-firestore-react-router)
+  1. [react-router](./m5/part4-rect-router)
+  1. [firestore](./m5/part4-firestore)
 
 
-## Exam 1
+## Exam 1:
 
 * [Results](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTw17kTJ_V8UucCscd8DJiOikUlH22nHdQRRxG-wLiJmizTwh0sAHYAEDqOBdt7rVqpB3Z2TChUg8C/pubhtml?gid=991180652&single=true)
 

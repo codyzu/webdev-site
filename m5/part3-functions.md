@@ -1,6 +1,6 @@
-# Deploying Firebase Cloud Functions
+# Firebase Cloud Functions
 
-## Firebase functions
+## 1 Add functions to your project
 
 1. Enable Firebase functions:
    ```cmd
@@ -57,28 +57,28 @@
 
 💡 The function `onRequest()` accepts supports routers and apps from [Express.js](https://expressjs.com/fr/). In our example, we use a function `(request, response) => { ... }`. The `request` and `response` objects are the same `req` and `res` that we used in Express.
 
-#### Exercise 1: Add a function to `functions/index.js` named `helloData` that accepts a name as a query parameter and returns it in JSON, i.e. `{name: 'cody'}`.
+#### Exercise 1.1 Add a function to `functions/index.js` named `helloData` that accepts a name as a query parameter and returns it in JSON, i.e. `{name: 'cody'}`.
 
 1. use `response.send()` to send and object in the response
 1. query parameters, i.e. `/helloData?name=cody` are parsed into the `request.query`, i.e. `request.query.name`.
 1. you can debug your function by adding logging statements, i.e. `console.log(request.query)` and reading them with `npm run firebase -- functions:log` (there will be some delay)
 1. ⚠️ don't forget to add a rewrite rule for `helloData` to your `firebase.json` file!
 
-#### Question 1: What is the content type of the response? (Hint: use the inspector)
+#### Question 1.1: What is the content type of the response? (Hint: use the inspector)
 
-#### Exercise 2: Add a function to `functions/index.js` named `helloHtml` that accepts a name as a query parameter and returns it in HTML, i.e. `<h1>hello cody</h1>`.
+#### Exercise 1.2: Add a function to `functions/index.js` named `helloHtml` that accepts a name as a query parameter and returns it in HTML, i.e. `<h1>hello cody</h1>`.
 
 1. use `response.send()` to send an HTML document, i.e. `<html><body><h1>...</h1></body></html>`
 1. use query parameters to parse the name
 1. ⚠️ don't forget to add a rewrite rule for `helloData` to your `firebase.json` file!
 
-#### Question 2: What is the content type of the response? (Hint: use the inspector)
+#### Question 1.2: What is the content type of the response? (Hint: use the inspector)
 
-#### Bonus 1: See [pug renderFile](https://pugjs.org/api/reference.html#pugrenderfilepath-options-callback) for how you might use pug to render a complete HTML template.
+#### Bonus 1.1 See [pug renderFile](https://pugjs.org/api/reference.html#pugrenderfilepath-options-callback) for how you might use pug to render a complete HTML template.
 
-#### Bonus 2: The `onRequest` function handler can also be passed an express app object. This allows us to to serve multiple routes from the same function. Serve a request app from a new function that serves multiple routes.
+#### Bonus 1.2 The `onRequest` function handler can also be passed an express app object. This allows us to to serve multiple routes from the same function. Serve a request app from a new function that serves multiple routes.
 
-## Why Functions?
+# Why Functions?
 
 Firebase Cloud Functions
 - Functions as a Service (FaaS)

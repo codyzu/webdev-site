@@ -1,6 +1,8 @@
-## Firebase Project
+# Firebase Hosting
 
-### Create a new Firebase Project
+## 1 Firebase Project
+
+### 1.1 Create a new Firebase Project
 
 1. [https://console.firebase.google.com](https://console.firebase.google.com)
 1. Sign in to your google account
@@ -8,7 +10,7 @@
 1. Give your project a unique name, keep the default settings, and accept all of the options:
    ![new project](images/firebase-add-project-annotated.jpg)
 
-## Add Firebase into your project
+## 1.2 Add Firebase into your project
 
 1. Start in the root of your calculator project (the same directory as your `package.json` file).
 
@@ -43,7 +45,7 @@
    npm run firebase -- login
    ```
 
-## Firebase hosting
+## 2 Hosting your react site
 
 1. Enable Firebase hosting:
    ```cmd
@@ -68,3 +70,4 @@
 
 1. In your browser, in the Firebase console, go to the "Hosting" page. Here you could associate a custom domain. You can also see your deployment history with the option to rollback to a previous deployment.
 
+#### Exercise 2.1 Update your site and redeploy. Use the Firebase console to roll back your deployment.
