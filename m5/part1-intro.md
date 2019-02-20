@@ -1,3 +1,6 @@
+---
+redirect_from: "/m5"
+---
 # Cloud
 
 What is the cloud?
