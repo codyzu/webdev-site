@@ -1,6 +1,8 @@
+# Deploying Firebase Cloud Functions
+
 ## Firebase functions
 
-1. Enable Firebase hosting:
+1. Enable Firebase functions:
    ```cmd
    npm run firebase -- init
    ```
@@ -73,6 +75,8 @@
 #### Question 2: What is the content type of the response? (Hint: use the inspector)
 
 #### Bonus 1: See [pug renderFile](https://pugjs.org/api/reference.html#pugrenderfilepath-options-callback) for how you might use pug to render a complete HTML template.
+
+#### Bonus 2: The `onRequest` function handler can also be passed an express app object. This allows us to to serve multiple routes from the same function. Serve a request app from a new function that serves multiple routes.
 
 ## Why Functions?
 

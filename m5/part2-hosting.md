@@ -8,16 +8,6 @@
 1. Give your project a unique name, keep the default settings, and accept all of the options:
    ![new project](images/firebase-add-project-annotated.jpg)
 
-### Enable Firestore NoSQL Database in the Firebase Console
-
-1. Navigate to Database and click "Create Database"
-
-   ![create database](images/create-database-annotated.jpg)
-
-1. Choose "Start in test mode". _⚠ Note the security warning: **your database is open for anyone to read/write!**_ Click "Create project".
-
-   ![security rules](images/security-rules-annotated.jpg)
-
 ## Add Firebase into your project
 
 1. Start in the root of your calculator project (the same directory as your `package.json` file).

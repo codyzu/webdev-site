@@ -197,6 +197,16 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
    export default History;
    ```
 
+### Enable Firestore NoSQL Database in the Firebase Console
+
+1. In the firebase console, navigate to Database and click "Create Database"
+
+   ![create database](images/create-database-annotated.jpg)
+
+1. Choose "Start in test mode". _⚠ Note the security warning: **your database is open for anyone to read/write!**_ Click "Create project".
+
+   ![security rules](images/security-rules-annotated.jpg)
+
 ## Add history documents to DB
 
 1. In the firebase console, navigate to the Database page
