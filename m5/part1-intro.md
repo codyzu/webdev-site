@@ -1,5 +1,5 @@
 ---
-redirect_from: "/m5"
+redirect_from: "/m5/"
 ---
 # Cloud
 
