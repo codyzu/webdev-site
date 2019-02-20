@@ -17,7 +17,7 @@ title: Web Development 2019
   1. [hosting](./m5/part2-hosting)
   1. [cloud functions](./m5/part3-functions)
   1. [react-router](./m5/part4-rect-router)
-  1. [firestore](./m5/part4-firestore)
+  1. [firestore](./m5/part5-firestore)
 
 
 ## Exam 1:
