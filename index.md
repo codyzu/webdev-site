@@ -14,6 +14,4 @@ title: Web Development 2019
 * [module 4: react](./m4)
 
 
-## Exam 1:
-
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTw17kTJ_V8UucCscd8DJiOikUlH22nHdQRRxG-wLiJmizTwh0sAHYAEDqOBdt7rVqpB3Z2TChUg8C/pubhtml?gid=991180652&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+## [Exam 1 Results](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTw17kTJ_V8UucCscd8DJiOikUlH22nHdQRRxG-wLiJmizTwh0sAHYAEDqOBdt7rVqpB3Z2TChUg8C/pubhtml?gid=991180652&single=true)
