@@ -24,11 +24,10 @@ title: Web Development 2019
 
 * [Results](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTw17kTJ_V8UucCscd8DJiOikUlH22nHdQRRxG-wLiJmizTwh0sAHYAEDqOBdt7rVqpB3Z2TChUg8C/pubhtml?gid=991180652&single=true)
 
-<!--
 ## Exam 2
 
 * [Vote](https://cpinfo-m5-cloud-poll.firebaseapp.com)
--->
+
 <!--
 * [Evaluation](https://docs.google.com/forms/d/e/1FAIpQLSeT7QqVglh3fZEJRZRT6egJV8nmBr5AoJDXKQUl1TKIquGnZg/viewform?usp=sf_link)
 -->
