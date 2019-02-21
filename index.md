@@ -31,3 +31,7 @@ title: Web Development 2019
 <!--
 * [Evaluation](https://docs.google.com/forms/d/e/1FAIpQLSeT7QqVglh3fZEJRZRT6egJV8nmBr5AoJDXKQUl1TKIquGnZg/viewform?usp=sf_link)
 -->
+
+<!--
+* [Hackathon](./m6)
+-->
