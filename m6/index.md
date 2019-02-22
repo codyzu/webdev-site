@@ -88,13 +88,6 @@ inside `package.json` add:
    // ...
    ```
 
-1. Add you project:
-   ```cmd
-   npm run use --add
-   ```
-   Select your project and name it `default`.
-
-
 1. Enable Firebase functions:
    ```cmd
    npm run firebase -- init
@@ -104,6 +97,13 @@ inside `package.json` add:
    1. Select "JavaScript"
    1. "Do you want to use ESLint to catch probable bugs and enforce style?" **enter `n`**
    1. "Do you want to install dependencies with npm now?" **enter `n`**
+
+1. Associate your firebase project:
+   ```cmd
+   npm run use --add
+   ```
+   Select your project and name it `default`.
+
 
 1. Modify your functions to use the [node.js version 8 runtime](https://firebase.google.com/docs/functions/manage-functions#set_nodejs_version).
 
