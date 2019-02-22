@@ -57,13 +57,22 @@ Deploy a page that **dynamically**:
    * a react app (include the 5 images as static assets and load them with jimp by url)
 
 
+## Create a new Firebase Project
+
+1. [https://console.firebase.google.com](https://console.firebase.google.com)
+1. Sign in to your google account
+1. "Add project"
+1. Give your project a unique name, keep the default settings, and accept all of the options:
+   ![new project](images/firebase-add-project-annotated.jpg)
+
+
 ## Function with hosting
 
 ```
 mkdir hackathon
 cd hackathon
 yarn init
-yarn add firebase-tools
+yarn add --dev firebase-tools
 ```
 
 inside `package.json` add:
@@ -78,6 +87,13 @@ inside `package.json` add:
 
    // ...
    ```
+
+1. Add you project:
+   ```cmd
+   npm run use --add
+   ```
+   Select your project and name it `default`.
+
 
 1. Enable Firebase functions:
    ```cmd
