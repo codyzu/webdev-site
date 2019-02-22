@@ -54,4 +54,4 @@ Deploy a page that **dynamically**:
 1. deploy your site to firebase
 1. consider using 1 (or more) of the following:
    * a cloud function that renders a pug template or an html string
-   * a react app (import the 5 image files into your application)
+   * a react app (include the 5 images as static assets and load them with jimp by url)
