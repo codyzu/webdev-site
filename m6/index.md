@@ -55,3 +55,60 @@ Deploy a page that **dynamically**:
 1. consider using 1 (or more) of the following:
    * a cloud function that renders a pug template or an html string
    * a react app (include the 5 images as static assets and load them with jimp by url)
+
+
+## Function with hosting
+
+```
+mkdir hackathon
+cd hackathon
+yarn init
+yarn add firebase-tools
+```
+
+inside `package.json` add:
+   `package.json`:
+   ```javascript
+   // ...
+
+   "scripts": {
+     // ...
+     "firebase": "firebase"
+   },
+
+   // ...
+   ```
+
+1. Enable Firebase functions:
+   ```cmd
+   npm run firebase -- init
+   ```
+   
+   1. Choose "Functions"
+   1. Select "JavaScript"
+   1. "Do you want to use ESLint to catch probable bugs and enforce style?" **enter `n`**
+   1. "Do you want to install dependencies with npm now?" **enter `n`**
+
+1. Modify your functions to use the [node.js version 8 runtime](https://firebase.google.com/docs/functions/manage-functions#set_nodejs_version).
+
+   In `functions/package.json` add:
+   ```
+   "engines": {
+     "node": "8"
+   },
+   ```
+
+1. Install the dependencies with yarn (or npm):
+   ```cmd
+   cd functions
+   yarn --ignore-engines
+   ```
+
+   ⚠️ _Note: `yarn` or `yarn install` will enforce the engine that we added to `package.json`. Therefore, we should use the `--ignore-engines` flag with yarn or use `npm install`. You can make this permanent for your `functions` directory by running `echo "--ignore-engines true" > .yarnrc`_
+
+1. In vscode, open `functions/index.js` and **un-comment** all of the lines of code.
+
+**FROM THE ROOT OF YOUR PROJECT:**
+```cmd
+npm run firebase -- deploy
+```
