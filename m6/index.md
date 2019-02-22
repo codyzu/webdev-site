@@ -35,8 +35,10 @@ Using these images:
 Use the following `decode()` function to decode the embedded data.
 
 ```javascript
+const functions = require('firebase-functions');
 const jimp = require('jimp');
 const lsb = require('lsb');
+const path = require('path')
 
 async function decode(inputImage) {
   const image = await jimp.read(inputImage);
@@ -47,6 +49,25 @@ async function decode(inputImage) {
 function rgb(n) {
   return n + Math.floor(n / 3);
 }
+
+exports.index = functions.https.onRequest((request, response) => {
+
+  const html = `
+  <html>
+    <body>
+      <h1>this is html</h1>
+      <img src="/imga" />
+    </body>
+  </html>
+  `
+  response.send(html);
+});
+
+exports.imga = functions
+  .https
+  .onRequest(async (request, response) => {
+    response.sendFile(path.resolve('./a.png'));
+  });
 ```
 
 Deploy a page that **dynamically**:
