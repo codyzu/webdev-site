@@ -36,7 +36,7 @@ Use the following `decode()` function to decode the embedded data.
 const jimp = require('jimp');
 const lsb = require('lsb');
 
-function decode(inputImage) {
+async function decode(inputImage) {
   const image = await jimp.read(inputImage);
   const json = lsb.decode(image.bitmap.data, rgb);
   return JSON.parse(json);
