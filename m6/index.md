@@ -100,7 +100,7 @@ inside `package.json` add:
 
 1. Associate your firebase project:
    ```cmd
-   npm run use --add
+   npm run firebase -- use --add
    ```
    Select your project and name it `default`.
 
