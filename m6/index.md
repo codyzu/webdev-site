@@ -8,8 +8,10 @@ You will need these 2 packages:
 * [lsb](https://github.com/hughsk/lsb)
 * [jimp](https://github.com/oliver-moran/jimp/tree/master/packages/jimp)
 
+From inside **functions** directory:
 ```cmd
-yarn add lsb jimp
+cd functions
+yarn add lsb jimp --ignore-engines
 ```
 
 There are 5 images with data encoded in them.
