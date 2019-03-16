@@ -45,6 +45,12 @@
    ]
    ```
 
+1. Re-deploy your project **⚠️ from the root of your project ⚠️**:
+```cmd
+cd ..
+npm run firebase -- deploy
+```
+
 1. You just deployed your first serverless cloud function! You can access either directly in the URL listed in the console:
    
    `https://us-central1-{your project name}.cloudfunctions.net/helloWorld`
