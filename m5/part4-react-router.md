@@ -12,7 +12,7 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
 
 Start with your calculator project we previously created **or** use the files distributed during the course.
 
-_If you use the files from the course, you may want to create a new firebase project and link it to the project_
+_If you use the files distributed during the course, you may want to create a new firebase project and link it to the project._
 
 **⚠️ Only follow these directions if you choose to use the files distributed during the course. _If you use your existing calculator project, skip to section 1._**
 
@@ -23,9 +23,9 @@ _If you use the files from the course, you may want to create a new firebase pro
    ![new project](images/firebase-add-project-annotated.jpg)
 1. Install the dependencies in the root **and** the functions folder:
    ```cmd
-   yarn install
+   yarn
    cd functions
-   yarn install --ignore-engines
+   yarn
    cd ..
    ```
 1. Build the react project:
