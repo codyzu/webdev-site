@@ -64,7 +64,7 @@
    npm run firebase -- use --add
    ```
    1. _" Which project do you want to add?"_ **select the project you create before and press enter**
-   1. _"What alias do you want to use for this project? (e.g. staging)"_ **end `default` and press enter**
+   1. _"What alias do you want to use for this project? (e.g. staging)"_ **enter `default` and press enter**
 
 1. Deploy your application!
    ```cmd

@@ -8,20 +8,64 @@ Client side routing consists of 2 primary tasks:
 
 For this activity, we will use the [React Router](https://reacttraining.com/react-router/) for the browser: [react-router-dom](https://reacttraining.com/react-router/web/guides/philosophy).
 
+## 0 Setup
+
+Start with your calculator project we previously created **or** use the files distributed during the course.
+
+_If you use the files from the course, you may want to create a new firebase project and link it to the project_
+
+**⚠️ Only follow these directions if you choose to use the files distributed during the course. _If you use your existing calculator project, skip to section 1._**
+
+1. [https://console.firebase.google.com](https://console.firebase.google.com)
+1. Sign in to your google account
+1. "Add project"
+1. Give your project a unique name, keep the default settings, and accept all of the options:
+   ![new project](images/firebase-add-project-annotated.jpg)
+1. Install the dependencies in the root **and** the functions folder:
+   ```cmd
+   yarn install
+   cd functions
+   yarn install --ignore-engines
+   cd ..
+   ```
+1. Build the react project:
+   ```cmd
+   yarn build
+   ```
+1. Ensure you are logged into firebase in the console:
+   ```cmd
+   npm run firebase -- login
+   ```
+1. Link your local project to your Firebase project:
+   ```cmd
+   npm run firebase -- use --add
+   ```
+   1. _" Which project do you want to add?"_ **select the project you create before and press enter**
+   1. _"What alias do you want to use for this project? (e.g. staging)"_ **enter `default` and press enter**
+1. Deploy the application!
+   ```cmd
+   npm run firebase -- deploy
+   ```
+   After the deployment is complete, the the **Hosting URL** shows in the output, you should see the calculator. Also verify adding `/helloWorld`, `/helloHtml`, and `/helloData` all work.
+
 ## 1 Add routing to the calculator
 
-1. Create a new file `src/Calculator.js` and move all of the components from your `index.js` file to the new file, i.e. (`Button`, `KeyRow`, `KeyPad`, `Calculator`). Export the `Calculator` component at the end of the file:
+1. Create a new file `src/Calculator.js` and move **all of the components** from your `index.js` file to the new file, i.e. (`Button`, `KeyRow`, `KeyPad`, `Calculator`). Export the `Calculator` component at the end of the file:
 
    ```javascript
    import React, {useState, useReducer} from 'react';
 
-   // ...
-   // your components here
-   // ...
+   const Button = () => {
+     //...
+   };
+
+   const KeyPad = () => {
+     //...
+   };
 
    const Calculator = () => {
      // ...
-   }
+   };
 
    export default Calculator;
    ```
@@ -100,7 +144,7 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
          <Route exact path='/' component={Calculator} />
          <Route exact path='/history' component={History} />
        </Switch>
-     </>
+     </>;
    ```
 
    ⚠️ A component must have 1 parent tag. Here we used react [fragment](https://reactjs.org/docs/fragments.html) syntax `<> ... </>` tags to wrap our components.
@@ -123,7 +167,7 @@ For this activity, we will use the [React Router](https://reacttraining.com/reac
          <Route exact path='/' component={Calculator} />
          <Route exact path='/history' component={History} />
        </Switch>
-     </>
+     </>;
    ```
 
    1. Locally, the new link won't work. Instead, no components after the links will get rendered.
