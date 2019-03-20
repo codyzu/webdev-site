@@ -47,3 +47,8 @@ title: Web Development 2019
 
 * [Security Rules](https://firebase.google.com/docs/firestore/security/get-started)
 * [Rules `Auth` Object](https://firebase.google.com/docs/reference/rules/rules.firestore.Request#auth)
+
+### Productivity
+
+* [create react app proxy](https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development)
+* [firebase pre-deploy hooks](https://firebase.google.com/docs/cli/#hooks)
