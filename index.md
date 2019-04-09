@@ -50,5 +50,10 @@ title: Web Development 2019
 
 ### Productivity
 
+* [firebase blog about security rules](https://firebase.googleblog.com/2019/03/firebase-security-rules-admin-sdk-tips.html)
 * [create react app proxy](https://facebook.github.io/create-react-app/docs/proxying-api-requests-in-development)
 * [firebase pre-deploy hooks](https://firebase.google.com/docs/cli/#hooks)
+
+### Example site
+
+* [Cat Feeder](https://github.com/codyzu/kitty-feeder)
