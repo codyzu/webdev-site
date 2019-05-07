@@ -48,6 +48,10 @@ title: Web Development 2019
 * [Security Rules](https://firebase.google.com/docs/firestore/security/get-started)
 * [Rules `Auth` Object](https://firebase.google.com/docs/reference/rules/rules.firestore.Request#auth)
 
+### Firebase Cloud Storage
+
+* [Automatically resize images](https://firebase.google.com/docs/storage/extend-with-functions)
+
 ### Productivity
 
 * [firebase blog about security rules](https://firebase.googleblog.com/2019/03/firebase-security-rules-admin-sdk-tips.html)
